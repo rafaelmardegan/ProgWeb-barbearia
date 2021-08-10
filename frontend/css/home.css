@@ -10,28 +10,6 @@
 	}
 }
 
-.home-sobre{
-    width: 120px;
-    float: left;
-    margin:0 20px 20px 0;
-}
-
-.home-first{
-	width: 100%;
-    border: 10px solid #000000;
-    padding: 2px;
-}
-
-.home-h2 {
-	text-align: center;
-    font-family: roboto;
-    font-size: 30pt;
-    color: black;
-    text-shadow: 10px 3px 10px black;
-
-}
-
-.home-mapa{
-    width:940px;
-    margin: 0 auto;
+.intro{
+	background-image: url("/imagens/background.png");
 }
