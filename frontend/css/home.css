@@ -10,10 +10,7 @@
 	}
 }
 
-.home-intro{
-	background-color: aquamarine;
+.home{
+	background-image: linear-gradient(white,aquamarine,white);
 }
 
-.home-sobre{
-	background-color: black; color: #fff;
-}
