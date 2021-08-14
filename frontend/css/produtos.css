@@ -28,3 +28,14 @@ transition: box-shadow 0.3s ease-in 0s;
 .card-body{
 	width: 95%;
 }
+.btn-form-cadastro-produtos{
+	margin-top: 8px;
+}
+.container-cadastro-produtos{
+	display: none;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.alert-danger, .alert-success{
+	display: none;
+}

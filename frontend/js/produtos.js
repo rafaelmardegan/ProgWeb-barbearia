@@ -1,5 +1,6 @@
 
-function addCard(){
+
+function addCard(descricao, preco){
 	var card = document.createElement("div");
 	card.classList.add('card');
 
@@ -13,11 +14,11 @@ function addCard(){
 
 	cardTitle = document.createElement('h5');
 	cardTitle.classList.add('card-title');
-    cardTitle.textContent="teste título";
+    cardTitle.textContent= descricao;
 
 	cardValor = document.createElement('h5');
 	cardValor.classList.add('valor-card');
-    cardValor.textContent="R$ 0,01"; 
+    cardValor.textContent=`R$ ${preco}`; 
 
     cardBtn = document.createElement('a');
     cardBtn.classList.add('btn');
@@ -32,6 +33,41 @@ function addCard(){
 
     card.appendChild(cardBody);   
 	var rowProdutos = document.getElementsByClassName("row-produtos")[0].append(card);
-
-
 }
+
+function toggleForm(){
+	$('.container-cadastro-produtos').toggle('slow');
+}
+function closeAlertForm(){
+	$('.alert-danger').hide('slow');	
+	$('.alert-success').hide('slow');	
+}
+function limpaForm(){
+	$('form').each (function(){
+	  	this.reset();
+	});
+}
+function cadastrar(){
+	var validacao = true;
+	$('form').find('input[required]').each(function(){
+	  if(!$(this).val()){
+	    validacao = false;
+	  }	  
+	});
+	if (!validacao) {
+		$('.alert-danger').show('slow');
+
+	} else {
+		// alert("form ok");
+		var descricao = $('#descricao-produto').val();
+		var preco = $('#preco-produto').val();
+		addCard(descricao, preco);
+		limpaForm();
+		$('.alert-success').show('slow');	
+	}
+}
+$( document ).ready(function() {
+    $('input').focus(function(){
+    	closeAlertForm();
+    });
+});
