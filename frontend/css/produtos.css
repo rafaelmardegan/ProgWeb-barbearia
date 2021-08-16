@@ -38,4 +38,28 @@ transition: box-shadow 0.3s ease-in 0s;
 }
 .alert-danger, .alert-success{
 	display: none;
+
+}
+.row-btn-enviar{
+	padding-left: 5%;
+	padding-right: 5%;
+}
+.row-alertas{
+	padding-left: 5%;
+	padding-right: 5%;
+
+}
+.card{
+
+		overflow: hidden;
+}
+.img-card:hover{
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+	-moz-transform: scale(1.1) rotate(-5deg) ;
+	-webkit-transform: scale(1.1) rotate(-5deg) ;
+	-o-transform: scale(1.1) rotate(-5deg) ;
+	-ms-transform: scale(1.1) rotate(-5deg) ;
+	transform: scale(1.1) rotate(-5deg);
 }
