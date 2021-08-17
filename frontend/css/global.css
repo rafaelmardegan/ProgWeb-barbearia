@@ -2,6 +2,12 @@
 	width: auto;
 	height: auto;	
 }
+#img-logo:hover{
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+    transition: 0.5s;
+}
 .active{
 	text-shadow: rgba(0,0,0,0.56) 6px 7px 9px;
 }
