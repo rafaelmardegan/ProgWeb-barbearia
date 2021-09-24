@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION['usuario'])){
+	header('Location: ../index.php?erro=naoAutorizado');
+	exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -10,6 +17,7 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link href="./css/global.css" rel="stylesheet">
    <link href="./css/contato.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">   
 </head>
 <body style="background-image: url(imagens/100px180/bg.png);">
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -21,21 +29,29 @@
 	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	    <ul class="navbar-nav mr-auto">
 	      <li class="nav-item">
-	        <a class="nav-link" href=".\home.html">Home </a>
+	        <a class="nav-link" href=".\home.php">Home </a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" href=".\produtos.html">Produtos</a>
+	        <a class="nav-link" href=".\produtos.php">Produtos</a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" href=".\servicos.html" >Serviços</a>
+	        <a class="nav-link" href=".\servicos.php" >Serviços</a>
 	      </li>
 	      <li class="nav-item active">
-	        <a class="nav-link" href=".\contato.html" >Contato <span class="sr-only">(current)</span></a>
+	        <a class="nav-link" href=".\contato.php" >Contato <span class="sr-only">(current)</span></a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" href=".\sobre.html" >Sobre</a>
+	        <a class="nav-link" href=".\sobre.php" >Sobre</a>
 	      </li>	      	      
 	    </ul>
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item">
+	        <a class="btn btn-dark " id="logout" href="..\backend\controller\logoutController.php" >	
+			Logout
+			<i class="bi bi-box-arrow-right"></i>			
+			</a>
+	      </li>				
+		</ul>
 	  </div>
 	</nav>
 	<div class="alert alert-light" style="background-color: rgba(0, 0, 0, 0.1);" role="alert">

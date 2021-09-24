@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION['usuario'])){
+	header('Location: ../index.php?erro=naoAutorizado');
+	exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -21,21 +28,29 @@
 	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	    <ul class="navbar-nav mr-auto">
 	      <li class="nav-item">
-	        <a class="nav-link" href=".\home.html">Home </a>
+	        <a class="nav-link" href=".\home.php">Home </a>
 	      </li>
 	      <li class="nav-item active">
-	        <a class="nav-link" href=".\produtos.html">Produtos <span class="sr-only">(current)</span></a>
+	        <a class="nav-link" href=".\produtos.php">Produtos <span class="sr-only">(current)</span></a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" href=".\servicos.html" >Serviços</a>
+	        <a class="nav-link" href=".\servicos.php" >Serviços</a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" href=".\contato.html" >Contato</a>
+	        <a class="nav-link" href=".\contato.php" >Contato</a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" href=".\sobre.html" >Sobre</a>
+	        <a class="nav-link" href=".\sobre.php" >Sobre</a>
 	      </li>	      	      
 	    </ul>
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item">
+	        <a class="btn btn-dark " id="logout" href="..\backend\controller\logoutController.php" >	
+			Logout
+			<i class="bi bi-box-arrow-right"></i>			
+			</a>
+	      </li>				
+		</ul>
 	  </div>
 	</nav>
 	<!-- ################ INÍCIO CONTEÚDO ################ -->
