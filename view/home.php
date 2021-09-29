@@ -48,7 +48,7 @@ if(!isset($_SESSION['usuario'])){
 	    </ul>
 		<ul class="navbar-nav ml-auto">
 			<li class="nav-item">
-	        <a class="btn btn-dark " id="logout" href="..\backend\controller\logoutController.php" >	
+	        <a class="btn btn-dark " id="logout" href="..\backend\controller\logoutController.php" >
 			Logout
 			<i class="bi bi-box-arrow-right"></i>			
 			</a>
@@ -58,7 +58,9 @@ if(!isset($_SESSION['usuario'])){
 	</nav>
 	<!-- ################ INÍCIO CONTEÚDO ################ -->
 
-
+	<div class="container bemvindo">
+		<?php echo "Bem-vindo " . $_SESSION['usuario'] ?>
+	</div>
 	<div class="jumbotron jumbotron-fluid home">
 		<div class="container">
 			<div class="row">
