@@ -48,7 +48,57 @@ function addCard(descricao, preco){
 	var rowProdutos = document.getElementsByClassName("row-produtos")[0].append(card);
 }
 
+function addCard2(descricao, preco, src){
+	var card = document.createElement("div");
+	card.classList.add('card');
 
+	var img = document.createElement('img')	;
+
+	img.classList.add('card-img-top');
+	img.classList.add('img-card'); 
+	img.setAttribute('id', geraIdAleatorio());
+	img.setAttribute('src', src);
+
+
+		// var inputFile = document.getElementById('customFile');
+	    // if (inputFile.files && inputFile.files[0]) {
+	    //     var reader = new FileReader();
+	    //     $('#label-img').text('Carregando imagem...');
+	    //     reader.onload = function (e) {	        	
+	    //     	img.setAttribute('src', e.target.result);
+
+	    //     }
+	    //     reader.readAsDataURL(inputFile.files[0]);
+
+
+	    // }
+	card.appendChild(img);	
+	
+	var cardBody = document.createElement('div');
+	cardBody.classList.add('card-body');
+
+	cardTitle = document.createElement('h5');
+	cardTitle.classList.add('card-title');
+    cardTitle.textContent= descricao;
+
+	cardValor = document.createElement('h5');
+	cardValor.classList.add('valor-card');
+    cardValor.textContent=`R$ ${preco}`; 
+
+    cardBtn = document.createElement('a');
+    cardBtn.classList.add('btn');
+    cardBtn.classList.add('btn-success');
+    cardBtn.classList.add('btn-block');
+    cardBtn.classList.add('btn-card');
+    cardBtn.textContent="COMPRAR";
+
+    cardBody.appendChild(cardTitle);
+    cardBody.appendChild(cardValor);
+    cardBody.appendChild(cardBtn);
+
+    card.appendChild(cardBody);   
+	var rowProdutos = document.getElementsByClassName("row-produtos")[0].append(card);
+}
 function geraIdAleatorio(){
 	var letters = "abcdefghijklmnopqrstuvwxyz";
 	var plat_id = letters.charAt(Math.floor(Math.random() * letters.length)) + (Math.random() + 1).toString(36).substr(2, 9);
@@ -95,9 +145,23 @@ function cadastrar(){
 		$('.alert-success').show('slow');	
 	}
 }
+function getProdutos(){
+
+	  $.post("./../backend/controller/produtosController.php",{
+		operacao: "listar"
+		
+	  },
+	  function(data,status){
+		  var resp = jQuery.parseJSON(data);
+		resp.forEach(element => {
+			addCard2(element.descricao, element.preco, element.diretorio+element.nomeImg)
+		});
+	  });
+}
 $( document ).ready(function() {
     $('input').focus(function(){
     	closeAlertForm();
     });
+	getProdutos();
 
 });

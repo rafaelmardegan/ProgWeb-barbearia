@@ -147,7 +147,7 @@ if(!isset($_SESSION['usuario'])){
 
 		</div>
 		<div class="row row-produtos" >
-		<div class="card" >
+		<!-- <div class="card" >
 		  <img src="./imagens/produtos/produto1.jpg" class="card-img-top img-card" alt="...">
 		  <div class="card-body" >
 		    <h5 class="card-title">Shampoo de barba</h5>
@@ -211,7 +211,7 @@ if(!isset($_SESSION['usuario'])){
 		    <h5 class="valor-card">R$ 142,90</h5>
 		    <a class="btn btn-success btn-block btn-card">COMPRAR</a>
 		  </div>
-		</div>				
+		</div>				 -->
 		</div>		
 	</div>
 	<!-- ################ FIM CONTEÚDO ################ -->	
