@@ -55,19 +55,20 @@ if(!isset($_SESSION['usuario'])){
 	<div class="alert alert-light" style="background-color: rgba(0, 0, 0, 0.1);" role="alert">
 		<h4 style="text-align: center;" ><span class="titulo">Alguns de Nossos Serviços</span></h4>
 	  </div>
+	  
 	<!-- ################ INÍCIO CONTEÚDO ################ -->
-	<div class="container servicos">	
+	<div class="container card-servicos">	
 		<div class="cards1">			  
 			<div class="card-deck">
-				<div class="card">
+				<!-- <div class="card":
 				  <img class="card-img-top" src="imagens/100px180/corte.jpg" alt="Imagem de capa do card">
 				  <div class="card-body">
 					<h5 class="card-title text-center">Corte do cabelo</h5>
-					<p class="card-text">Contamos com profissionais preparados para realizar o seu corte da maneira que desejar.</p>
+					<p class="card-text" >Contamos com profissionais preparados para realizar o seu corte da maneira que desejar.</p>
 				  </div>
 				  <div class="card-footer">
-					<a class="btn btn-primary btn-block" onclick="showModalPopUp1()" role="button">Agendar</a>
-					<a class="btn btn-secondary btn-block"  href="https://api.whatsapp.com/send?phone=5555984618335&text=Ol%C3%A1%2C%20gostaria%20de%20receber%20mais%20informa%C3%A7%C3%B5es%20sobre%20um%20dos%20seus%20servi%C3%A7os!" role="button">Tirar dúvidas</a>
+					<a class="btn btn-primary btn-block" role="button">Agendar</a>
+					<a class="btn btn-secondary btn-block" href="https://api.whatsapp.com/send?phone=5555984618335&text=Ol%C3%A1%2C%20gostaria%20de%20receber%20mais%20informa%C3%A7%C3%B5es%20sobre%20um%20dos%20seus%20servi%C3%A7os!" role="button">Tirar dúvidas</a>
 				  </div>
 				</div>
 				<div class="card">
@@ -91,11 +92,11 @@ if(!isset($_SESSION['usuario'])){
 					<a class="btn btn-primary btn-block" onclick="showModalPopUp3()" role="button">Agendar</a>
 					<a class="btn btn-secondary btn-block"  href="https://api.whatsapp.com/send?phone=5555984618335&text=Ol%C3%A1%2C%20gostaria%20de%20receber%20mais%20informa%C3%A7%C3%B5es%20sobre%20um%20dos%20seus%20servi%C3%A7os!" role="button">Tirar dúvidas</a>
 				  </div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 		<br>
-		<div class="cards2">
+		<!-- <div class="cards2">
 			<div class="card-deck">
 				<div class="card">
 				  <img class="card-img-top" src="imagens/100px180/infantil.jpg" alt="Imagem de capa do card">
@@ -131,7 +132,7 @@ if(!isset($_SESSION['usuario'])){
 				  </div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</div>
 	<br>
 	<!-- ################ FIM CONTEÚDO ################ -->
