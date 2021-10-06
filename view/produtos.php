@@ -140,7 +140,7 @@ if(!isset($_SESSION['usuario'])){
 				</div>		  	
 			  </div>
 			  <div class="row row-btn-enviar">
-			  	<button class="btn btn-outline-dark btn-block" type="button" onclick="cadastrar();" id="btn-cadastrar" >Enviar
+			  	<button class="btn btn-outline-dark btn-block" type="button" onclick="adicionar();" id="btn-cadastrar" >Enviar
 			  	</button>
 			  </div>
 			</form>

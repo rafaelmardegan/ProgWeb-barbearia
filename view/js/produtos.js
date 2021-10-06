@@ -127,7 +127,25 @@ function limpaForm(){
 	  	this.reset();
 	});
 }
-function cadastrar(){
+// function cadastrar(){
+// 	var validacao = true;
+// 	$('form').find('input[required]').each(function(){
+// 	  if(!$(this).val()){
+// 	    validacao = false;
+// 	  }	  
+// 	});
+// 	if (!validacao) {
+// 		$('.alert-danger').show('fast');
+
+// 	} else {
+// 		var descricao = $('#descricao-produto').val();
+// 		var preco = $('#preco-produto').val();
+// 		addCard(descricao, preco);
+// 		limpaForm();
+// 		$('.alert-success').show('slow');	
+// 	}
+// }
+function adicionar(){
 	var validacao = true;
 	$('form').find('input[required]').each(function(){
 	  if(!$(this).val()){
@@ -140,7 +158,34 @@ function cadastrar(){
 	} else {
 		var descricao = $('#descricao-produto').val();
 		var preco = $('#preco-produto').val();
-		addCard(descricao, preco);
+		var imagem = $('#customFile').val(); 
+		// document.getElementById('customFile');
+
+		// $.post("./../backend/controller/produtosController.php",
+		// 		{operacao: 'adicionar',
+		// 		descricao: descricao,
+		// 		preco: preco,
+		// 		imagem: imagem
+		// 		}, function(response, status){
+		// 	// if (status) {
+		// 			console.log(descricao);
+		// 			console.log(preco);
+		// 			console.log(imagem);
+		// 			// console.log(response);
+			  
+		// 	// } else {
+		// 	// }
+		//   })
+
+		$.post("./../backend/controller/produtosController.php", {
+				operacao: "adicionar",
+				descricao: descricao,
+				preco: preco,
+				imagem: imagem
+		}, function(response){
+			alert(response);
+		});
+
 		limpaForm();
 		$('.alert-success').show('slow');	
 	}

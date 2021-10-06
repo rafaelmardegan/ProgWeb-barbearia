@@ -24,6 +24,13 @@ switch ($operacao) {
 
         echo json_encode($produtos);
         break;
+    case 'adicionar' :
+    // echo $_POST['descricao'];
+    // echo $_POST['preco'];
+    $file =  $_POST['imagem'];
+    echo $file['tmp_name'];
+
+        break;
     
     default:
         # code...
