@@ -1,12 +1,14 @@
 <?php
-session_start();
+// session_start();
 include_once('../model/Produto.php');
 include_once('../model/ProdutoModel.php');
 
 $produto = ProdutoModel::getInstance();
-
-$operacao = $_POST['operacao'];
-
+$operacao = false;
+var_dump($_POST['descricao']);
+// if (!isset($_POST['operacao'])) {
+//     $operacao = "uploadFile";
+// }
 switch ($operacao) {
     case 'listar':
         $prod = array();
@@ -24,21 +26,12 @@ switch ($operacao) {
 
         echo json_encode($produtos);
         break;
-    case 'adicionar' :
-        if (!empty($_FILES['fileimagem']))
-        {
-            $produto = new Produto();
+    case 'uploadFile' :
+            // $produto = new Produto();
             $novo_nome = md5(time()).mt_rand(5, 100).".JPG";
-            $file_path = $_FILES['tmp_name'];
-            $diretorioReal = "../view/imagens/produtos/"; 
-
-
-            echo move_uploaded_file($_FILES['fileimagem']['tmp_name'], 'img/'.$_FILES['fileimagem']['name']);       
-        }
-        else
-        {
-            echo 'false';
-        }
+            $file_path = $_FILES['customFile']['tmp_name'];
+            $diretorioReal = "../../view/imagens/produtos/"; 
+            echo move_uploaded_file($file_path, $diretorioReal . basename($novo_nome));       
 
         break;
     

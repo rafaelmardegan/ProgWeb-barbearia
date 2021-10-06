@@ -1,105 +1,105 @@
-function addCard(descricao, preco){
+function addCard(descricao, preco) {
 	var card = document.createElement("div");
 	card.classList.add('card');
 
-	var img = document.createElement('img')	;
+	var img = document.createElement('img');
 
 	img.classList.add('card-img-top');
-	img.classList.add('img-card'); 
+	img.classList.add('img-card');
 	img.setAttribute('id', geraIdAleatorio());
 
-		var inputFile = document.getElementById('customFile');
-	    if (inputFile.files && inputFile.files[0]) {
-	        var reader = new FileReader();
-	        $('#label-img').text('Carregando imagem...');
-	        reader.onload = function (e) {	        	
-	        	img.setAttribute('src', e.target.result);
+	var inputFile = document.getElementById('customFile');
+	if (inputFile.files && inputFile.files[0]) {
+		var reader = new FileReader();
+		$('#label-img').text('Carregando imagem...');
+		reader.onload = function (e) {
+			img.setAttribute('src', e.target.result);
 
-	        }
-	        reader.readAsDataURL(inputFile.files[0]);
+		}
+		reader.readAsDataURL(inputFile.files[0]);
 
 
-	    }
-	card.appendChild(img);	
-	
+	}
+	card.appendChild(img);
+
 	var cardBody = document.createElement('div');
 	cardBody.classList.add('card-body');
 
 	cardTitle = document.createElement('h5');
 	cardTitle.classList.add('card-title');
-    cardTitle.textContent= descricao;
+	cardTitle.textContent = descricao;
 
 	cardValor = document.createElement('h5');
 	cardValor.classList.add('valor-card');
-    cardValor.textContent=`R$ ${preco}`; 
+	cardValor.textContent = `R$ ${preco}`;
 
-    cardBtn = document.createElement('a');
-    cardBtn.classList.add('btn');
-    cardBtn.classList.add('btn-success');
-    cardBtn.classList.add('btn-block');
-    cardBtn.classList.add('btn-card');
-    cardBtn.textContent="COMPRAR";
+	cardBtn = document.createElement('a');
+	cardBtn.classList.add('btn');
+	cardBtn.classList.add('btn-success');
+	cardBtn.classList.add('btn-block');
+	cardBtn.classList.add('btn-card');
+	cardBtn.textContent = "COMPRAR";
 
-    cardBody.appendChild(cardTitle);
-    cardBody.appendChild(cardValor);
-    cardBody.appendChild(cardBtn);
+	cardBody.appendChild(cardTitle);
+	cardBody.appendChild(cardValor);
+	cardBody.appendChild(cardBtn);
 
-    card.appendChild(cardBody);   
+	card.appendChild(cardBody);
 	var rowProdutos = document.getElementsByClassName("row-produtos")[0].append(card);
 }
 
-function addCard2(descricao, preco, src){
+function addCard2(descricao, preco, src) {
 	var card = document.createElement("div");
 	card.classList.add('card');
 
-	var img = document.createElement('img')	;
+	var img = document.createElement('img');
 
 	img.classList.add('card-img-top');
-	img.classList.add('img-card'); 
+	img.classList.add('img-card');
 	img.setAttribute('id', geraIdAleatorio());
 	img.setAttribute('src', src);
 
 
-		// var inputFile = document.getElementById('customFile');
-	    // if (inputFile.files && inputFile.files[0]) {
-	    //     var reader = new FileReader();
-	    //     $('#label-img').text('Carregando imagem...');
-	    //     reader.onload = function (e) {	        	
-	    //     	img.setAttribute('src', e.target.result);
+	// var inputFile = document.getElementById('customFile');
+	// if (inputFile.files && inputFile.files[0]) {
+	//     var reader = new FileReader();
+	//     $('#label-img').text('Carregando imagem...');
+	//     reader.onload = function (e) {	        	
+	//     	img.setAttribute('src', e.target.result);
 
-	    //     }
-	    //     reader.readAsDataURL(inputFile.files[0]);
+	//     }
+	//     reader.readAsDataURL(inputFile.files[0]);
 
 
-	    // }
-	card.appendChild(img);	
-	
+	// }
+	card.appendChild(img);
+
 	var cardBody = document.createElement('div');
 	cardBody.classList.add('card-body');
 
 	cardTitle = document.createElement('h5');
 	cardTitle.classList.add('card-title');
-    cardTitle.textContent= descricao;
+	cardTitle.textContent = descricao;
 
 	cardValor = document.createElement('h5');
 	cardValor.classList.add('valor-card');
-    cardValor.textContent=`R$ ${preco}`; 
+	cardValor.textContent = `R$ ${preco}`;
 
-    cardBtn = document.createElement('a');
-    cardBtn.classList.add('btn');
-    cardBtn.classList.add('btn-success');
-    cardBtn.classList.add('btn-block');
-    cardBtn.classList.add('btn-card');
-    cardBtn.textContent="COMPRAR";
+	cardBtn = document.createElement('a');
+	cardBtn.classList.add('btn');
+	cardBtn.classList.add('btn-success');
+	cardBtn.classList.add('btn-block');
+	cardBtn.classList.add('btn-card');
+	cardBtn.textContent = "COMPRAR";
 
-    cardBody.appendChild(cardTitle);
-    cardBody.appendChild(cardValor);
-    cardBody.appendChild(cardBtn);
+	cardBody.appendChild(cardTitle);
+	cardBody.appendChild(cardValor);
+	cardBody.appendChild(cardBtn);
 
-    card.appendChild(cardBody);   
+	card.appendChild(cardBody);
 	var rowProdutos = document.getElementsByClassName("row-produtos")[0].append(card);
 }
-function geraIdAleatorio(){
+function geraIdAleatorio() {
 	var letters = "abcdefghijklmnopqrstuvwxyz";
 	var plat_id = letters.charAt(Math.floor(Math.random() * letters.length)) + (Math.random() + 1).toString(36).substr(2, 9);
 	var passo_1 = Math.random() * letters.length;
@@ -115,16 +115,16 @@ function geraIdAleatorio(){
 	return novoId;
 }
 
-function toggleForm(){
+function toggleForm() {
 	$('.container-cadastro-produtos').toggle('slow');
 }
-function closeAlertForm(){
-	$('.alert-danger').hide('fast');	
-	$('.alert-success').hide('fast');	
+function closeAlertForm() {
+	$('.alert-danger').hide('fast');
+	$('.alert-success').hide('fast');
 }
-function limpaForm(){
-	$('form').each (function(){
-	  	this.reset();
+function limpaForm() {
+	$('form').each(function () {
+		this.reset();
 	});
 }
 // function cadastrar(){
@@ -145,12 +145,12 @@ function limpaForm(){
 // 		$('.alert-success').show('slow');	
 // 	}
 // }
-function adicionar(){
+function adicionar() {
 	var validacao = true;
-	$('form').find('input[required]').each(function(){
-	  if(!$(this).val()){
-	    validacao = false;
-	  }	  
+	$('form').find('input[required]').each(function () {
+		if (!$(this).val()) {
+			validacao = false;
+		}
 	});
 	if (!validacao) {
 		$('.alert-danger').show('fast');
@@ -158,40 +158,73 @@ function adicionar(){
 	} else {
 		var descricao = $('#descricao-produto').val();
 		var preco = $('#preco-produto').val();
-		// var imagem = $('#customFile').val(); 
+		// var imagem = $('#customFile').val();
 		var imagem = new FormData();
-		imagem.append('fileimagem', $('#customFile')[0].files[0]);
-
-		$.post("./../backend/controller/produtosController.php", {
-				operacao: "adicionar",
-				descricao: descricao,
-				preco: preco,
-				imagem: imagem
-		}, function(response){
-			alert(response);
+		imagem.append('customFile', $('#customFile')[0].files[0]);
+		console.log(descricao);
+		console.log(preco);
+		console.log(imagem);
+		$.ajax({
+			type: "POST",
+			url: "./../backend/controller/produtosController.php",
+			contentType: false,
+			processData: false,
+			data: {imagem, descricao, preco},
+			success: function (response) {
+				// $.ajax({
+				// 	type: "POST",
+				// 	url: "./../backend/controller/produtosController.php",
+				// 	contentType: false,
+				// 	processData: false,
+				// 	data: imagem,
+				// 	success: function (response) {
+		
+				// 	}
+				// });
+			}
 		});
+		// $.ajax({
+		// 	url: "./../backend/controller/produtosController.php",
+		// 	type: "POST",
+		// 	data: {
+		// 		operacao: "adicionar",
+		// 		descricao: descricao,
+		// 		preco: preco
+		// 	},
+		// 	processData: false,
+		// 	contentType: 'application/json'
+		// });
+		// $.post("./../backend/controller/produtosController.php", {
+		// 		operacao: "adicionar",
+		// 		descricao: descricao,
+		// 		preco: preco,
+		// 		imagem: imagem
+		// }
+		// , function(response){
+		// 	alert(response);
+		// });
 
 		limpaForm();
-		$('.alert-success').show('slow');	
+		$('.alert-success').show('slow');
 	}
 }
-function getProdutos(){
+function getProdutos() {
 
-	  $.post("./../backend/controller/produtosController.php",{
+	$.post("./../backend/controller/produtosController.php", {
 		operacao: "listar"
-		
-	  },
-	  function(data,status){
-		  var resp = jQuery.parseJSON(data);
-		resp.forEach(element => {
-			addCard2(element.descricao, element.preco, element.diretorio+element.nomeImg)
+
+	},
+		function (data, status) {
+			var resp = jQuery.parseJSON(data);
+			resp.forEach(element => {
+				addCard2(element.descricao, element.preco, element.diretorio + element.nomeImg)
+			});
 		});
-	  });
 }
-$( document ).ready(function() {
-    $('input').focus(function(){
-    	closeAlertForm();
-    });
-	getProdutos();
+$(document).ready(function () {
+	$('input').focus(function () {
+		closeAlertForm();
+	});
+	// getProdutos();
 
 });
