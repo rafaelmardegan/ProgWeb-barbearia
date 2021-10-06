@@ -25,10 +25,20 @@ switch ($operacao) {
         echo json_encode($produtos);
         break;
     case 'adicionar' :
-    // echo $_POST['descricao'];
-    // echo $_POST['preco'];
-    $file =  $_POST['imagem'];
-    echo $file['tmp_name'];
+        if (!empty($_FILES['fileimagem']))
+        {
+            $produto = new Produto();
+            $novo_nome = md5(time()).mt_rand(5, 100).".JPG";
+            $file_path = $_FILES['tmp_name'];
+            $diretorioReal = "../view/imagens/produtos/"; 
+
+
+            echo move_uploaded_file($_FILES['fileimagem']['tmp_name'], 'img/'.$_FILES['fileimagem']['name']);       
+        }
+        else
+        {
+            echo 'false';
+        }
 
         break;
     

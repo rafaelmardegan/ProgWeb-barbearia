@@ -118,7 +118,7 @@ if(!isset($_SESSION['usuario'])){
 			    <div class="col-md-4 mb-3">
 			    	<label for="validationDefaultUsername">Imagem</label>
 			    	<div class="custom-file">
-			    	  <input type="file" class="custom-file-input bg-dark text-light" required id="customFile">
+			    	  <input type="file" class="custom-file-input bg-dark text-light" name="img" required id="customFile">
 			    	  <label class="custom-file-label bg-dark" id="label-img" for="customFile">Escolher arquivo</label>
 			    	</div>
 			    </div>

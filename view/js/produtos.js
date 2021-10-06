@@ -158,24 +158,9 @@ function adicionar(){
 	} else {
 		var descricao = $('#descricao-produto').val();
 		var preco = $('#preco-produto').val();
-		var imagem = $('#customFile').val(); 
-		// document.getElementById('customFile');
-
-		// $.post("./../backend/controller/produtosController.php",
-		// 		{operacao: 'adicionar',
-		// 		descricao: descricao,
-		// 		preco: preco,
-		// 		imagem: imagem
-		// 		}, function(response, status){
-		// 	// if (status) {
-		// 			console.log(descricao);
-		// 			console.log(preco);
-		// 			console.log(imagem);
-		// 			// console.log(response);
-			  
-		// 	// } else {
-		// 	// }
-		//   })
+		// var imagem = $('#customFile').val(); 
+		var imagem = new FormData();
+		imagem.append('fileimagem', $('#customFile')[0].files[0]);
 
 		$.post("./../backend/controller/produtosController.php", {
 				operacao: "adicionar",
